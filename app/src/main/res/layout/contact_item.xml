@@ -12,10 +12,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Ibrahim Gudratli"
         android:fontFamily="sans-serif-medium"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        android:text="Ibrahim Gudratli"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/ivContactPic"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -26,17 +26,36 @@
         android:layout_marginTop="12dp"
         android:fontFamily="sans-serif-medium"
         android:text="+994774612026"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/ivContactPic"
         app:layout_constraintTop_toBottomOf="@+id/tvFullName" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="98dp"
-        android:layout_height="83dp"
+        android:id="@+id/ivContactPic"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.529"
+        app:layout_constraintVertical_bias="0.333"
         app:srcCompat="@drawable/profile_male_png" />
+
+    <ImageView
+        android:id="@+id/ivCall"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_call" />
+
+    <View
+        app:layout_constraintTop_toBottomOf="@id/ivContactPic"
+        android:layout_marginTop="12dp"
+        android:background="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
