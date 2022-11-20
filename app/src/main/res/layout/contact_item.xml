@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:id="@+id/constraintLayoutContactItem"
-    android:layout_height="100dp">
+    android:layout_height="80dp">
 
     <TextView
         android:id="@+id/tvFullName"
@@ -12,9 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:fontFamily="sans-serif-medium"
         android:text="Ibrahim Gudratli"
-        android:textSize="18sp"
+        android:textSize="17sp"
         app:layout_constraintStart_toEndOf="@+id/ivContactPic"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,17 +22,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:fontFamily="sans-serif-medium"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-light"
         android:text="+994774612026"
         app:layout_constraintStart_toEndOf="@+id/ivContactPic"
         app:layout_constraintTop_toBottomOf="@+id/tvFullName" />
 
     <ImageView
         android:id="@+id/ivContactPic"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -42,20 +42,13 @@
 
     <ImageView
         android:id="@+id/ivCall"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="40dp"
+        android:layout_height="45dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_call" />
-
-    <View
-        app:layout_constraintTop_toBottomOf="@id/ivContactPic"
-        android:layout_marginTop="12dp"
-        android:background="#000000"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

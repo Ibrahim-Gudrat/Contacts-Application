@@ -38,7 +38,7 @@ class ContactListAdapter() : RecyclerView.Adapter<ContactListAdapter.ContactList
     override fun onBindViewHolder(holder: ContactListViewHolder, position: Int) {
         val currentItem = contactList[position]
         holder.itemView.tvFullName.text = "${currentItem.name} ${currentItem.surname}"
-        holder.itemView.tvPhoneNumber.text = currentItem.phoneNumber.toString()
+        holder.itemView.tvPhoneNumber.text = "Mobile ${currentItem.phoneNumber}"
 
         holder.itemView.constraintLayoutContactItem.setOnClickListener {
             val action = ListFragmentDirections.actionListFragmentToUpdateFragment(currentItem)
