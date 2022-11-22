@@ -32,8 +32,9 @@ class ListFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         viewModel = ViewModelProvider(this).get(ContactViewModel::class.java)
-        viewModel.readAllData.observe(viewLifecycleOwner, Observer {contact ->
-            adapter.setData(contact)
+
+        viewModel.readAllData.observe(viewLifecycleOwner, Observer {contacts ->
+            adapter.setData(contacts)
         })
 
 

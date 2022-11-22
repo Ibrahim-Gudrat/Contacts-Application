@@ -1,11 +1,10 @@
 package com.abrahamgudratli.contacts.ui.fragments
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -38,6 +37,8 @@ class UpdateFragment : Fragment() {
             updateContact()
         }
 
+        setHasOptionsMenu(true)
+
         return view
     }
 
@@ -61,6 +62,32 @@ class UpdateFragment : Fragment() {
 
     private fun inputCheck(name: String, surname: String, phone: String): Boolean {
         return !(TextUtils.isEmpty(name) && TextUtils.isEmpty(surname) && TextUtils.isEmpty(phone))
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.delete_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.delete_item) {
+            deleteContact()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun deleteContact() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Yes") { _, _ ->
+            viewModel.deleteContact(args.currentContact)
+            Toast.makeText(requireContext(), "Contact is deleted..", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_updateFragment_to_listFragment)
+        }
+        builder.setNegativeButton("No") { _, _ ->
+
+        }
+        builder.setTitle("Delete Contact")
+        builder.setMessage("Do you want to delete ${args.currentContact.name}")
+        builder.show()
     }
 
 

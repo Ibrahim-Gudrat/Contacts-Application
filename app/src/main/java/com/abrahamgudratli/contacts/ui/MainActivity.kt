@@ -13,7 +13,6 @@ class MainActivity: AppCompatActivity() {
 
         setupActionBarWithNavController(findNavController(R.id.fragment))
 
-
     }
 
     override fun onSupportNavigateUp(): Boolean {
